@@ -80,7 +80,16 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+        checkCollisions();
+    }
+
+    function checkCollisions(){
+      allEnemies.forEach(function(enemy) {
+         if ( (Math.abs(player.x - Math.trunc(enemy.x)) < 70) && (Math.abs(player.y - enemy.y) < 60) ) { 
+           player.y = 320;
+           player.hits += 1;
+         }
+      });
     }
 
     /* This is called by the update function  and loops through all of the
@@ -135,7 +144,6 @@ var Engine = (function(global) {
                 ctx.drawImage(Resources.get(rowImages[row]), col * 101, row * 83);
             }
         }
-
 
         renderEntities();
     }
