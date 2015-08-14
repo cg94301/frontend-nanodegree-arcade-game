@@ -1,6 +1,23 @@
 frontend-nanodegree-arcade-game
 ===============================
 
-Students should use this rubric: https://www.udacity.com/course/viewer#!/c-ud015/l-3072058665/m-3072588797
+How to Play
+-----------
 
-for self-checking their submission.
+You can move the hero with the arrow keys on your keyboard:
+  UP
+  DOWN
+  LEFT 
+  RIGHT
+
+The hero will move one field per keystroke.
+
+The goal is to reach the water on the other side of the road
+without hitting any of the beetles. 
+
+Each time the water is reached a point is added.
+Each time a beetle is hit a point is subtracted.
+
+
+
+

@@ -20,10 +20,10 @@ var Engine = (function(global) {
      * set the canvas elements height/width and add it to the DOM.
      */
     var doc = global.document,
-        win = global.window,
-        canvas = doc.createElement('canvas'),
-        ctx = canvas.getContext('2d'),
-        lastTime;
+    win = global.window,
+    canvas = doc.createElement('canvas'),
+    ctx = canvas.getContext('2d'),
+    lastTime;
 
     canvas.width = 505;
     canvas.height = 606;
@@ -40,7 +40,7 @@ var Engine = (function(global) {
          * computer is) - hurray time!
          */
         var now = Date.now(),
-            dt = (now - lastTime) / 1000.0;
+        dt = (now - lastTime) / 1000.0;
 
         /* Call our update/render functions, pass along the time delta to
          * our update function since it may be used for smooth animation.
@@ -84,14 +84,14 @@ var Engine = (function(global) {
     }
 
     function checkCollisions(){
-      allEnemies.forEach(function(enemy) {
-         if ( (Math.abs(player.x - Math.trunc(enemy.x)) < 70) && (Math.abs(player.y - enemy.y) < 60) ) { 
-           player.y = 320;
-           player.hits += 1;
-         }
-      });
+	allEnemies.forEach(function(enemy) {
+            if ( (Math.abs(player.x - Math.trunc(enemy.x)) < 70) && (Math.abs(player.y - enemy.y) < 60) ) { 
+		player.y = 320;
+		player.hits += 1;
+            }
+	});
     }
-
+    
     /* This is called by the update function  and loops through all of the
      * objects within your allEnemies array as defined in app.js and calls
      * their update() methods. It will then call the update function for your
@@ -117,16 +117,16 @@ var Engine = (function(global) {
          * for that particular row of the game level.
          */
         var rowImages = [
-                'images/water-block.png',   // Top row is water
-                'images/stone-block.png',   // Row 1 of 3 of stone
-                'images/stone-block.png',   // Row 2 of 3 of stone
-                'images/stone-block.png',   // Row 3 of 3 of stone
-                'images/grass-block.png',   // Row 1 of 2 of grass
-                'images/grass-block.png'    // Row 2 of 2 of grass
-            ],
-            numRows = 6,
-            numCols = 5,
-            row, col;
+            'images/water-block.png',   // Top row is water
+            'images/stone-block.png',   // Row 1 of 3 of stone
+            'images/stone-block.png',   // Row 2 of 3 of stone
+            'images/stone-block.png',   // Row 3 of 3 of stone
+            'images/grass-block.png',   // Row 1 of 2 of grass
+            'images/grass-block.png'    // Row 2 of 2 of grass
+        ],
+        numRows = 6,
+        numCols = 5,
+        row, col;
 
         /* Loop through the number of rows and columns we've defined above
          * and, using the rowImages array, draw the correct image for that
@@ -144,8 +144,11 @@ var Engine = (function(global) {
                 ctx.drawImage(Resources.get(rowImages[row]), col * 101, row * 83);
             }
         }
-
-        renderEntities();
+	
+        renderEntities()
+        ctx.font = '36px sans-serif';
+        ctx.fillStyle = 'white';
+        ctx.fillText("POINTS: " + (player.score - player.hits),20,100);
     }
 
     /* This function is called by the render function and is called on each game
