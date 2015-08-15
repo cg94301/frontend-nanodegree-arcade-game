@@ -88,10 +88,29 @@ Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+// Returns a random integer between min (included) and max (included)
+// Using Math.round() will give you a non-uniform distribution!
+function getRandomIntInclusive(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+var lane1 = 3;
+var lane2 = 1;
+var lane3 = 2;
+var lane4 = getRandomIntInclusive(1,3);
+var lane5 = getRandomIntInclusive(1,3);
+
+var speed1 = getRandomIntInclusive(65,85);
+var speed2 = getRandomIntInclusive(85,115);
+var speed3 = getRandomIntInclusive(120,130);
+var speed4 = getRandomIntInclusive(150,170);
+var speed5 = getRandomIntInclusive(175,190);
+
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-var allEnemies = [new Enemy(3,75), new Enemy(1,100), new Enemy(2,120), new Enemy(2,160)];
+var allEnemies = [new Enemy(lane1,speed1), new Enemy(lane2,speed2), new Enemy(lane3,speed3), 
+		  new Enemy(lane4,speed4), new Enemy(lane5,speed5)];
 var player = new Player();
 
 
