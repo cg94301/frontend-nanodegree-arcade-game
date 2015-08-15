@@ -13,7 +13,7 @@ var Agent = function(x,y,url) {
 Agent.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
-    
+
 // Enemies our player must avoid
 var Enemy = function(x,y,url,speed) {
     // Variables applied to each of our instances go here,
@@ -97,7 +97,7 @@ Player.prototype.update = function() {
 // Returns a random integer between min (included) and max (included)
 // Using Math.round() will give you a non-uniform distribution!
 function getRandomIntInclusive(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 var lane1 = 3;
