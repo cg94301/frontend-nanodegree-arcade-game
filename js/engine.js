@@ -57,7 +57,7 @@ var Engine = (function(global) {
          * function again as soon as the browser is able to draw another frame.
          */
         win.requestAnimationFrame(main);
-    };
+    }
 
     /* This function does some initial setup that should only occur once,
      * particularly setting the lastTime variable that is required for the
@@ -145,7 +145,7 @@ var Engine = (function(global) {
             }
         }
 	
-        renderEntities()
+        renderEntities();
         ctx.font = '36px sans-serif';
         ctx.fillStyle = 'white';
         ctx.fillText("POINTS: " + (player.score - player.hits),20,100);
