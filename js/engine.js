@@ -85,7 +85,8 @@ var Engine = (function(global) {
 
     function checkCollisions(){
 	allEnemies.forEach(function(enemy) {
-            if ( (Math.abs(player.x - Math.trunc(enemy.x)) < 70) && (Math.abs(player.y - enemy.y) < 60) ) { 
+	    if ( player.x < enemy.x + 80 && player.x + 50 > enemy.x &&
+                 player.y < enemy.y + 60 && player.y + 60 > enemy.y ) {
 		player.y = 320;
 		player.hits += 1;
             }
