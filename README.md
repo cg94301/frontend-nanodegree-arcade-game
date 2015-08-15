@@ -1,16 +1,25 @@
 frontend-nanodegree-arcade-game
 ===============================
 
-This is a simple version of the arcade game frogger.
+This is a simple version of the arcade game [Frogger](https://en.wikipedia.org/wiki/Frogger).
 
 ![mini frogger screenshot](images/screenshot.png)
+
+How to Start
+-----------
+
+Clone this repository onto your machine:
+
+    $ git clone https://github.com/cg94301/frontend-nanodegree-arcade-game.git
+
+Open index.html in your browser to start the game.
 
 How to Play
 -----------
 
-Clone this repository onto your machine and open index.html in your browser. You can move the player with the arrow keys on your keyboard:
+You can move the player with the arrow keys on your keyboard:
 
-  UP  
+  >UP  
   DOWN  
   LEFT  
   RIGHT
