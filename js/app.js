@@ -125,7 +125,7 @@ var allEnemies = [new Enemy(0,row2y(lane1),'images/enemy-bug.png',speed1),
                   new Enemy(0,row2y(lane4),'images/enemy-bug.png',speed4),
                   new Enemy(0,row2y(lane5),'images/enemy-bug.png',speed5)];
 
-var player = new Player(205,320,'images/char-boy.png');
+var player = new Player(202,320,'images/char-boy.png');
 
 
 // This listens for key presses and sends the keys to your
