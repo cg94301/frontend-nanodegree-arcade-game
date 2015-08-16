@@ -31,13 +31,13 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-    
+
     this.x = this.x + dt * this.speed;
-    
+
     if (this.x >= 525) {
-	this.x = -100;
+        this.x = -100;
     }
-    
+
 };
 
 // Now write your own player class
@@ -54,26 +54,26 @@ var Player = function(x,y,url) {
 Player.prototype = Object.create(Agent.prototype);
 Player.prototype.constructor = Player;
 
-Player.prototype.left = function() { 
-    this.x = this.x - 101; 
+Player.prototype.left = function() {
+    this.x = this.x - 101;
     if (this.x < 0) this.x = 0;
 };
 
-Player.prototype.right = function() { 
-    this.x = this.x + 101; 
+Player.prototype.right = function() {
+    this.x = this.x + 101;
     if (this.x > 400) this.x = 400;
 };
 
-Player.prototype.up = function() { 
+Player.prototype.up = function() {
     this.y = this.y - 83 ;
     if (this.y < 40) {
-	this.y = 320;
-	this.score += 1;
+        this.y = 320;
+        this.score += 1;
     }
 };
 
-Player.prototype.down = function() { 
-    this.y = this.y + 83; 
+Player.prototype.down = function() {
+    this.y = this.y + 83;
     if (this.y > 400) this.y = 400;
 };
 
@@ -82,15 +82,15 @@ Player.prototype.handleInput = function(key) {
 };
 
 Player.prototype.update = function() {
-    
+
     if (this.key !== undefined) {
-	
-	if (this.key == 'left') this.left();
-	if (this.key == 'right') this.right();
-	if (this.key == 'up') this.up();
-	if (this.key == 'down') this.down();
-	
-	this.key = undefined;
+
+        if (this.key == 'left') this.left();
+        if (this.key == 'right') this.right();
+        if (this.key == 'up') this.up();
+        if (this.key == 'down') this.down();
+
+        this.key = undefined;
     }
 };
 
@@ -119,11 +119,11 @@ function row2y(row) {
     return 63 + (row-1) * 82;
 }
 
-var allEnemies = [new Enemy(0,row2y(lane1),'images/enemy-bug.png',speed1), 
-		  new Enemy(0,row2y(lane2),'images/enemy-bug.png',speed2), 
-		  new Enemy(0,row2y(lane3),'images/enemy-bug.png',speed3), 
-		  new Enemy(0,row2y(lane4),'images/enemy-bug.png',speed4), 
-		  new Enemy(0,row2y(lane5),'images/enemy-bug.png',speed5)];
+var allEnemies = [new Enemy(0,row2y(lane1),'images/enemy-bug.png',speed1),
+                  new Enemy(0,row2y(lane2),'images/enemy-bug.png',speed2),
+                  new Enemy(0,row2y(lane3),'images/enemy-bug.png',speed3),
+                  new Enemy(0,row2y(lane4),'images/enemy-bug.png',speed4),
+                  new Enemy(0,row2y(lane5),'images/enemy-bug.png',speed5)];
 
 var player = new Player(205,320,'images/char-boy.png');
 

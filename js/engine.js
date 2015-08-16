@@ -84,15 +84,15 @@ var Engine = (function(global) {
     }
 
     function checkCollisions(){
-	allEnemies.forEach(function(enemy) {
-	    if ( player.x < enemy.x + 80 && player.x + 50 > enemy.x &&
+        allEnemies.forEach(function(enemy) {
+            if ( player.x < enemy.x + 80 && player.x + 50 > enemy.x &&
                  player.y < enemy.y + 60 && player.y + 60 > enemy.y ) {
-		player.y = 320;
-		player.hits += 1;
+                player.y = 320;
+                player.hits += 1;
             }
-	});
+        });
     }
-    
+
     /* This is called by the update function  and loops through all of the
      * objects within your allEnemies array as defined in app.js and calls
      * their update() methods. It will then call the update function for your
@@ -145,7 +145,7 @@ var Engine = (function(global) {
                 ctx.drawImage(Resources.get(rowImages[row]), col * 101, row * 83);
             }
         }
-	
+
         renderEntities();
         ctx.font = '36px sans-serif';
         ctx.fillStyle = 'white';
